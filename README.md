@@ -29,6 +29,7 @@ work (zero-copy decode win, prefill regression debate).
 | `gh_meta.txt` | Repo metadata snapshot |
 | `docs/fastflowlm/` | FastFlowLM docs (AMD's NPU-native runtime, built on IRON) |
 | `docs/hrx-loom/` | Loom Programming Guide (ROCm/hrx-system, mirrors rocm.github.io/hrx-system/loom/) |
+| `docs/mlir-air/` | MLIR-AIR published docs (Xilinx/mlir-air, mirrors xilinx.github.io/mlir-air/dev/) |
 
 ## Canonical sources
 
@@ -43,6 +44,9 @@ work (zero-copy decode win, prefill regression debate).
 - Loom guide under `docs/hrx-loom/` is mirrored from
   [ROCm/hrx-system](https://github.com/ROCm/hrx-system) `loom/docs/src`
   (publishes https://rocm.github.io/hrx-system/loom/).
+- MLIR-AIR docs under `docs/mlir-air/` are mirrored from
+  [Xilinx/mlir-air](https://github.com/Xilinx/mlir-air) `docs/` published
+  pages (publishes https://xilinx.github.io/mlir-air/dev/).
 
 ## Refresh
 

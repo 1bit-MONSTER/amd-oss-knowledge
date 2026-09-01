@@ -93,3 +93,8 @@ Not in this repo — canonical copies live in the 1bit-MONSTER repo. Summary:
   HSACO). Relevant to the HRX2 lane: `workflows/oracles/ggml-llama-cpp.md`,
   `workflows/agent-driven-kernel-development.md`, `guide/facts-and-
   specialization.md`, `integration/jit-kernel.md`, `reference/c-api/`.
+- `docs/mlir-air/` — MLIR-AIR (Xilinx/mlir-air): the spatial-compile MLIR
+  framework for mapping AI workloads onto AMD NPUs and Versal AI Engine
+  arrays. Position: MLIR-AIE is the shared substrate; MLIR-AIR is not it
+  (IRON bypasses AIR entirely). Key: `programming_guide.md`,
+  `mlir_reference.md`, `AIRComputeModel.md`.
