@@ -11,7 +11,20 @@ jobs:
     steps:
       - name: Trigger Context7 Refresh
         run: |
-          curl -sf -X POST https://context7.com/api/v1/refresh \
+          # Refresh the knowledge library. Free plan allows one manual refresh
+          # every 10 days; a "too-early" response is expected between allowed
+          # windows (Context7 also auto-refreshes) — treat it as success so the
+          # workflow only turns red on real errors (auth, missing library).
+          RESP=$(curl -sf -X POST https://context7.com/api/v1/refresh \
             -H "Content-Type: application/json" \
             -H "Authorization: Bearer ${{ secrets.CONTEXT7_API_KEY }}" \
-            -d '{"libraryName": "/1bit-monster/amd-oss-knowledge"}'
+            -d '{"libraryName": "/1bit-monster/amd-oss-knowledge"}') || true
+          echo "$RESP"
+          if echo "$RESP" | grep -q '"too-early"'; then
+            echo "within 10-day cooldown — skipping (Context7 auto-refresh covers it)"
+            exit 0
+          fi
+          if [ -z "$RESP" ] || echo "$RESP" | grep -q '"error"'; then
+            echo "refresh failed"
+            exit 1
+          fi
