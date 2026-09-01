@@ -88,3 +88,8 @@ Not in this repo — canonical copies live in the 1bit-MONSTER repo. Summary:
 - `ANALYSIS.md` — master table + the Ryzen AI NPU software stack mapping.
 - `structure.txt` / `gh_meta.txt` — per-repo structural and metadata snapshots.
 - `docs/fastflowlm/` — FastFlowLM product/runtime/benchmarks/models docs.
+- `docs/hrx-loom/` — the Loom Programming Guide (ROCm/hrx-system): the
+  source-first compiler HRX uses to specialize kernels (1–15 ms JIT to
+  HSACO). Relevant to the HRX2 lane: `workflows/oracles/ggml-llama-cpp.md`,
+  `workflows/agent-driven-kernel-development.md`, `guide/facts-and-
+  specialization.md`, `integration/jit-kernel.md`, `reference/c-api/`.

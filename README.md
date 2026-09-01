@@ -28,6 +28,7 @@ work (zero-copy decode win, prefill regression debate).
 | `structure.txt` | Per-repo structural pass |
 | `gh_meta.txt` | Repo metadata snapshot |
 | `docs/fastflowlm/` | FastFlowLM docs (AMD's NPU-native runtime, built on IRON) |
+| `docs/hrx-loom/` | Loom Programming Guide (ROCm/hrx-system, mirrors rocm.github.io/hrx-system/loom/) |
 
 ## Canonical sources
 
@@ -39,6 +40,9 @@ work (zero-copy decode win, prefill regression debate).
   `docs/research/` (hybrid-prefill-decode, IOMMU PerfOpt).
 - FastFlowLM docs under `docs/fastflowlm/` are copied from
   [ROCm/FastFlowLM](https://github.com/ROCm/FastFlowLM) (Apache-2.0).
+- Loom guide under `docs/hrx-loom/` is mirrored from
+  [ROCm/hrx-system](https://github.com/ROCm/hrx-system) `loom/docs/src`
+  (publishes https://rocm.github.io/hrx-system/loom/).
 
 ## Refresh
 
