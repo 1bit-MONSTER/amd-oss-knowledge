@@ -15,7 +15,7 @@ jobs:
           # every 10 days; a "too-early" response is expected between allowed
           # windows (Context7 also auto-refreshes) — treat it as success so the
           # workflow only turns red on real errors (auth, missing library).
-          RESP=$(curl -sf -X POST https://context7.com/api/v1/refresh \
+          RESP=$(curl -s -X POST https://context7.com/api/v1/refresh \
             -H "Content-Type: application/json" \
             -H "Authorization: Bearer ${{ secrets.CONTEXT7_API_KEY }}" \
             -d '{"libraryName": "/1bit-monster/amd-oss-knowledge"}') || true
