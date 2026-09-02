@@ -131,16 +131,16 @@ REPO: brevitas
 ==================================================================
 HEAD: 70e290c 2026-08-28 Docs: regenerate docs (#1599)
 branch: master
-size: 121M
-files: 2679
+size: 123M
+files: 2859
    780 .html
    509 .txt
    489 .py
+   180 .pyc
    180 .js
    156 .css
     79 .ipynb
     62 .svg
-    60 .png
 build files:
   setup.py
 license file: brevitas/LICENSE
@@ -202,20 +202,82 @@ top-level:
   trace_collection
 
 ==================================================================
+REPO: embpf-bootfw-update-tool
+==================================================================
+HEAD: 9cdeb9e 2026-09-01 advance to v7.3
+branch: main
+size: 960K
+files: 20
+    14 .tcl
+     2 .sh
+     1 .py
+     1 .md
+     1 .elf
+build files:
+license file: embpf-bootfw-update-tool/LICENSE
+  Copyright (C) 2024, Advanced Micro Devices, Inc.
+  
+  Permission is hereby granted, free of charge, to any person obtaining a copy of
+top-level:
+  LICENSE
+  README.md
+  ddr_reserved_mem_check.sh
+  microblaze
+  prog.sh
+  prog_spi.sh
+  versal
+  zynqmp
+
+==================================================================
+REPO: fastflowlm
+==================================================================
+HEAD: 6002e0f 2026-09-01 feat: update qwen3.5/3.6 dll/so
+branch: main
+size: 1013M
+files: 896
+   226 .xclbin
+   158 .hpp
+    68 .cpp
+    66 .dll
+    57 .md
+    50 .lib
+    47 .png
+    46 .so
+build files:
+  Dockerfile
+license file: fastflowlm/LICENSE_RUNTIME.txt
+  MIT License
+  
+  Copyright (c) 2026 Advanced Micro Devices, Inc.
+top-level:
+  Dockerfile
+  LICENSE_RUNTIME.txt
+  README.md
+  TERMS.md
+  assets
+  bench_config.json
+  debian
+  docs
+  flm_story.md
+  hrx-integration
+  src
+  third_party
+
+==================================================================
 REPO: finn
 ==================================================================
-HEAD: 39f0c9a 2026-04-14 [Deps] Reverse onnx upgrade for now to be aligned with qonnx
+HEAD: 39f0c9a6 2026-04-14 [Deps] Reverse onnx upgrade for now to be aligned with qonnx
 branch: main
-size: 23M
-files: 426
-   242 .py
+size: 86M
+files: 673
+   248 .py
+    98 .pyc
+    57 .cpp
+    36 .h
     35 .sv
+    32 .tcl
     31 .rst
-    18 .png
-    15 .v
-    13 .ipynb
-     8 .md
-     7 .json
+    21 .hpp
 build files:
   setup.py
 license file: finn/LICENSE.txt
@@ -228,6 +290,7 @@ top-level:
   LICENSE.txt
   README.md
   custom_hls
+  deps
   docker
   docs
   fetch-repos.sh
@@ -242,24 +305,75 @@ top-level:
   tutorials
 
 ==================================================================
+REPO: hrx-system
+==================================================================
+HEAD: 2bb373b38 2026-09-01 [Loom] Remove non-contract test and tool scaffolding (#507)
+branch: main
+size: 146M
+files: 7092
+  1562 .h
+  1515 .c
+   915 .cc
+   768 .py
+   503 .bazel
+   480 .txt
+   226 .loom
+   100 .bzl
+build files:
+  CMakeLists.txt
+  BUILD.bazel
+license file: hrx-system/LICENSE
+                                   Apache License
+                             Version 2.0, January 2004
+                          http://www.apache.org/licenses/
+top-level:
+  BUILD.bazel
+  BUILDING.md
+  CMakeLists.txt
+  CONTRIBUTING.md
+  LICENSE
+  MODULE.bazel
+  MODULE.bazel.lock
+  MODULE.cmake.lock
+  README.md
+  build_tools
+  dev.py
+  docs
+  lefthook-local.paranoid.example.yml
+  lefthook.yml
+  libhrx
+  loom
+  requirements-analysis.in
+  requirements-analysis.lock.txt
+  requirements-dev.in
+  requirements-dev.lock.txt
+  requirements-importers-mlir.in
+  requirements-importers-mlir.lock.txt
+  requirements-importers-tilelang.in
+  requirements-importers-tilelang.lock.txt
+  ruff.toml
+  runtime
+  third_party
+  tools
+
+==================================================================
 REPO: iron
 ==================================================================
-HEAD: d9e4ec5 2026-08-29 repeat: split cols against every constraint the BD imposes, and add test coverage (#161)
+HEAD: fba7943 2026-09-01 llama: W4A8_ATTN_I8 knob — q,k,v want i8, only o_proj tolerates i4
 branch: devel
-size: 2.4M
-files: 211
-   126 .py
-    32 .cc
-    13 .md
-    10 .yml
-     6 .txt
-     5 .sh
-     3 .yaml
-     2 .toml
+size: 418M
+files: 19988
+  8439 .ll
+  2961 .o
+  2823 .elf
+  2813 .script
+   890 .bin
+   474 .mlir
+   379 .json
+   229 .pdi
 build files:
   pyproject.toml
 license file: iron/LICENSES
-head: error reading 'iron/LICENSES': Is a directory
 top-level:
   AGENTS.md
   CODE_OF_CONDUCT.md
@@ -269,17 +383,82 @@ top-level:
   LICENSES
   README.md
   REUSE.toml
+  W4A8_LLAMA.md
+  __pycache__
   aie_kernels
+  bench_int8_gemm.py
+  build
+  build_int8_gemm
+  build_pb_i4
+  build_pb_i8
   ci
   conftest.py
   images
   iron
+  iron.egg-info
+  llama_w4a8_npu.py
+  llama_w4a8_validate.py
   pyproject.toml
   pytest.ini
   requirements.txt
   requirements_examples.txt
   requirements_stream.txt
   scripts
+  tests_latest.csv
+
+==================================================================
+REPO: llvm-aie
+==================================================================
+HEAD: a36c62b9d 2026-09-02 [AIE2PS] Spill 1024-bit fp accumulator overflow into the cmh bank.
+branch: aie-public
+size: 2.6G
+files: 163911
+  42263 .ll
+  35079 .cpp
+  15203 .h
+  12803 .c
+  12399 .s
+  6455 .mir
+  4132 .test
+  3990 .txt
+build files:
+  pyproject.toml
+license file: llvm-aie/mlir/LICENSE.TXT
+  ==============================================================================
+  The LLVM Project is under the Apache License v2.0 with LLVM Exceptions:
+  ==============================================================================
+top-level:
+  CODE_OF_CONDUCT.md
+  CONTRIBUTING.md
+  LICENSE.TXT
+  PERF_OPT_GUIDE.md
+  README.md
+  SECURITY.md
+  bolt
+  clang
+  clang-tools-extra
+  cmake
+  compiler-rt
+  cross-project-tests
+  flang
+  flang-rt
+  libc
+  libclc
+  libcxx
+  libcxxabi
+  libunwind
+  lld
+  lldb
+  llvm
+  llvm-libgcc
+  mlir
+  offload
+  openmp
+  polly
+  pyproject.toml
+  runtimes
+  third-party
+  utils
 
 ==================================================================
 REPO: logicnets
@@ -312,13 +491,94 @@ top-level:
   src
 
 ==================================================================
+REPO: mldebugger
+==================================================================
+HEAD: e38f2cd 2026-09-01 Add uint16_t to SIZE_BYTES (#46)
+branch: main
+size: 2.4M
+files: 78
+    40 .py
+    19 .elf
+     3 .yml
+     2 .so
+     2 .md
+     2 .json
+     2 .gitattributes
+     2 .exe
+build files:
+  setup.py
+  pyproject.toml
+license file: mldebugger/LICENSE
+  All userspace code authored by Xilinx or Advanced Micro Devices is
+  released under the following license:
+  
+top-level:
+  CLAUDE.md
+  LICENSE
+  README.md
+  ext
+  mldebug.py
+  mldebuglib.py
+  pyproject.toml
+  scripts
+  setup.py
+  src
+
+==================================================================
+REPO: mlir-aie
+==================================================================
+HEAD: acecda2 2026-09-01 build(deps): bump the github-actions-major group across 2 directories with 2 updates (#3576)
+branch: main
+size: 214M
+files: 3680
+  1214 .mlir
+   512 .py
+   356 .cpp
+   309 .lit
+   261 .txt
+   193 .md
+   180 .cc
+   177 .h
+build files:
+  CMakeLists.txt
+license file: mlir-aie/LICENSES
+top-level:
+  CMakeLists.txt
+  CONTRIBUTING.md
+  LICENSE
+  LICENSES
+  README.md
+  REUSE.toml
+  ROADMAP.md
+  SECURITY.md
+  aie_kernels
+  aie_runtime_lib
+  cmake
+  docs
+  include
+  lib
+  mkdocs.yml
+  platforms
+  programming_examples
+  programming_guide
+  pyrightconfig.json
+  python
+  ruff.toml
+  runtime_lib
+  skills
+  test
+  third_party
+  tools
+  utils
+
+==================================================================
 REPO: mlir-air
 ==================================================================
-HEAD: d5eea12 2026-08-31 [fused_decode] Re-pin the q broadcast memtile; #1928 unpinned it and qwen3-4b hangs (#1969)
+HEAD: 6d4ef8f 2026-09-01 [qwen25_3b_q4] Fix the decode wedge on Krackan: dual weight feed + a leaked builder env (#1973)
 branch: main
-size: 33M
-files: 2620
-   632 .mlir
+size: 34M
+files: 2626
+   636 .mlir
    617 .lit
    468 .py
    190 .cpp
@@ -469,20 +729,64 @@ top-level:
   tests
 
 ==================================================================
+REPO: onnx-mlir
+==================================================================
+HEAD: 2c74c10 2026-08-28 Merge pull request #1014 from marcblaaa/marcblum.fold_dq_constant
+branch: feature/onnx-to-tosa
+size: 29M
+files: 1751
+   551 .cpp
+   539 .mlir
+   134 .hpp
+    89 .txt
+    88 .py
+    53 .md
+    44 .onnxtext
+    41 .json
+build files:
+  CMakeLists.txt
+license file: onnx-mlir/LICENSE
+                                   Apache License
+                             Version 2.0, January 2004
+                          https://www.apache.org/licenses/
+top-level:
+  CHANGELOG.md
+  CMakeLists.txt
+  CODEOWNERS
+  CODE_OF_CONDUCT.md
+  CODING_PRACTICE.md
+  CONTRIBUTING.md
+  Doxyfile
+  GOVERNANCE.md
+  LICENSE
+  MLIR.cmake
+  README.md
+  SECURITY.md
+  VERSION_NUMBER
+  docker
+  docs
+  include
+  requirements.txt
+  src
+  test
+  third_party
+  utils
+
+==================================================================
 REPO: qonnx
 ==================================================================
 HEAD: 7dfd7dc 2026-02-17 Merge pull request #143 from iksnagreb/feature/generalized_multi_threshold_layouts
 branch: main
-size: 5.0M
-files: 213
+size: 5.5M
+files: 263
    150 .py
+    50 .pyc
     14 .md
      9 .onnx
      8 .rst
      5 .yml
      5 .ipynb
      3 .rst_t
-     3 .pb
 build files:
   setup.py
   pyproject.toml
@@ -506,14 +810,59 @@ top-level:
   tox.ini
 
 ==================================================================
+REPO: rapidwright
+==================================================================
+HEAD: 1580210 2026-09-01 Resolves new Net(null) with getParentNetName() (#1417)
+branch: master
+size: 12M
+files: 603
+   520 .java
+    33 .png
+     6 .yml
+     5 .txt
+     5 .tcl
+     5 .py
+     5 .md
+     3 .gradle
+build files:
+  Makefile
+license file: rapidwright/LICENSE.TXT
+  ===============================================================================
+  LICENSE INFORMATION FOR RAPIDWRIGHT
+  ===============================================================================
+top-level:
+  CODING_STYLE.md
+  CONTRIBUTING.md
+  LICENSE.TXT
+  Makefile
+  README.md
+  RELEASE_NOTES.TXT
+  bin
+  build.gradle
+  common.gradle
+  doc
+  gradle
+  gradlew
+  gradlew.bat
+  images
+  interchange
+  python
+  scripts
+  settings.gradle
+  src
+  tcl
+  test
+  timing
+
+==================================================================
 REPO: triton-xdna
 ==================================================================
 HEAD: 56dc236 2026-08-29 Merge pull request #101 from amd/bump-mlir-air-36ce5af
 branch: main
 size: 2.1M
-files: 157
+files: 159
     57 .py
-    53 .mlir
+    54 .mlir
      6 .sh
      5 .yml
      5 .txt
@@ -540,4 +889,128 @@ top-level:
   setup.py
   third_party
   utils
+
+==================================================================
+REPO: vitis-libraries
+==================================================================
+HEAD: 629b2c9 2026-06-24 Squashed 'solver' changes from ae6494d3..bb925de7 (#1351)
+branch: main
+size: 1.4G
+files: 17648
+  2451 .json
+  2082 .h
+  1770 .tcl
+  1664 .cpp
+  1530 .hpp
+  1130 .tmpl
+  1102 .txt
+   999 .mk
+build files:
+license file: vitis-libraries/motor_control/LICENSE.txt
+  Components: Vitis Motorcontrol Library
+  
+  X11 License
+top-level:
+  Jenkinsfile
+  LICENSE.txt
+  README.md
+  blas
+  data_mover
+  dependency.json
+  dsp
+  motor_control
+  platform_map.json
+  security
+  solver
+  ultrasound
+  utils
+  vision
+
+==================================================================
+REPO: xdp
+==================================================================
+HEAD: ac4ee60 2026-09-01 AieHalt full elf flow fix (#112)
+branch: master
+size: 6.5M
+files: 440
+   219 .h
+   186 .cpp
+    25 .txt
+     2 .py
+     2 .hpp
+     1 .yml
+     1 .md
+     1 .gitmodules
+build files:
+  CMakeLists.txt
+license file: xdp/LICENSE
+  All userspace code authored by Xilinx or Advanced Micro Devices is
+  released under the following license:
+  
+top-level:
+  CMakeLists.txt
+  LICENSE
+  README.md
+  aie-codegen
+  appdebug
+  config.h
+  debug
+  doxygen.config
+  profile
+
+==================================================================
+REPO: xilinx-tcl-store
+==================================================================
+HEAD: 8e592e1 2026-08-21 2026.1.1 catalog changes
+branch: master
+size: 42M
+files: 3015
+  1332 .xml
+   953 .txt
+   324 .tcl
+    69 .v
+    10 .dcp
+     7 .png
+     6 .xdc
+     5 .xci
+build files:
+license: (none found at top level)
+top-level:
+  README.md
+  catalog
+  support
+  tclapp
+
+==================================================================
+REPO: xrt
+==================================================================
+HEAD: c826a0e 2026-09-01 Updating XDP submodule (#10030)
+branch: master
+size: 78M
+files: 2384
+   729 .h
+   627 .cpp
+   161 .txt
+   151 .c
+    90 .cxx
+    56 .json
+    51 .yml
+    49 .rst
+build files:
+  CMakeLists.txt
+license file: xrt/LICENSE
+  All userspace code authored by Xilinx or Advanced Micro Devices is
+  released under the following license:
+  
+top-level:
+  CHANGELOG.rst
+  CMakeLists.txt
+  CONTRIBUTING.rst
+  LICENSE
+  NOTICE
+  README.rst
+  build
+  pyrightconfig.json
+  src
+  tests
 

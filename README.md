@@ -1,8 +1,9 @@
 # amd-oss-knowledge
 
 The AMD open-source NPU chain, documented and verified — a curated knowledge
-base distilled from the local research workspace `~/amd-oss` (14 AMD research
-repos cloned and analyzed, Aug 2026 snapshot).
+base distilled from the local research workspace `~/amd-oss` (AMD research
+repos cloned and analyzed — the NPU chain + Xilinx/AMD toolchain mirrors,
+Aug/Sep 2026 snapshot).
 
 **Entry point: [INDEX.md](INDEX.md).**
 
@@ -24,7 +25,7 @@ work (zero-copy decode win, prefill regression debate).
 |---|---|
 | `INDEX.md` | Curated knowledge index (start here) |
 | `DESCENT.md` | The Full Descent — the verified chain, hop by hop |
-| `ANALYSIS.md` | 14-repo consolidated technical analysis (master table + NPU stack) |
+| `ANALYSIS.md` | Consolidated technical analysis (master table + NPU stack) |
 | `structure.txt` | Per-repo structural pass |
 | `gh_meta.txt` | Repo metadata snapshot |
 | `docs/fastflowlm/` | FastFlowLM docs (AMD's NPU-native runtime, built on IRON) |

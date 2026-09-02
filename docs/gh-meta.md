@@ -26,3 +26,23 @@ npueval          stars=32     lang=C++        pushed=2025-11-08 archived=False l
   NPUEval is an LLM evaluation dataset written specifically to target AIE kernel code generation on RyzenAI hardware.
 aup-ai-tutorials stars=8      lang=Jupyter Notebook pushed=2026-07-21 archived=False lic=MIT
   AUP AI Tutorials
+vitis-libraries  stars=1123   lang=C++        pushed=2026-06-24 archived=False lic=Apache-2.0
+  Vitis Libraries
+xrt              stars=683    lang=C++        pushed=2026-09-02 archived=False lic=NOASSERTION
+  Run Time for AIE and FPGA based platforms
+mlir-aie         stars=684    lang=C          pushed=2026-09-01 archived=False lic=NOASSERTION
+  A close-to-metal Python API for programming AMD Ryzen™ AI NPUs (AI Engines), built on an open-source MLIR-based compiler
+rapidwright            stars=385    lang=Java         pushed=2026-09-01 archived=False lic=NOASSERTION
+  Build Customized FPGA Implementations for Vivado
+llvm-aie               stars=210    lang=LLVM         pushed=2026-09-01 archived=False lic=NOASSERTION
+  Fork of LLVM to support AMD AIEngine processors
+mldebugger             stars=4      lang=Python       pushed=2026-09-01 archived=False lic=NOASSERTION
+  NPU Debug for ML Designs
+xilinx-tcl-store       stars=376    lang=Tcl          pushed=2026-09-01 archived=False lic=none
+  Xilinx Tcl Store
+onnx-mlir              stars=11     lang=MLIR         pushed=2026-09-01 archived=False lic=Apache-2.0
+  Representation and Reference Lowering of ONNX Models in MLIR Compiler Infrastructure
+embpf-bootfw-update-tool stars=3      lang=Shell        pushed=2026-09-01 archived=False lic=MIT
+  
+xdp                    stars=3      lang=C++          pushed=2026-09-01 archived=False lic=NOASSERTION
+  
