@@ -122,3 +122,27 @@ One folder per repo under `docs/`, copied from the local `~/amd-oss` clones by
 | `vmr` | Xilinx/VMR | Versal Management Runtime firmware |
 | `plnx-aie-examples` | Xilinx/plnx-aie-examples | AIE examples for Petalinux |
 | `finn-hlslib` | Xilinx/finn-hlslib | Vitis HLS library for FINN |
+
+## Xilinx doc mirrors (docs/)
+
+One folder per repo under `docs/`, copied from the local `~/amd-oss` clones by
+`sync-knowledge.sh` (selection mirrors the amd-oss MCP manifest):
+
+| Folder | Source repo | Notes |
+|---|---|---|
+| `vitis-libraries` | Xilinx/Vitis_Libraries | user-guide rst (docs.amd.com Vitis Libraries) |
+| `xrt` | Xilinx/XRT | runtime docs toc (xilinx.github.io/XRT) |
+| `mlir-aie` | Xilinx/mlir-aie | AIE dialect/pass docs + skills (xilinx.github.io/mlir-aie) |
+| `aie-rt` | Xilinx/aie-rt | AIE Run Time driver + FAL |
+| `mlir-xten` | Xilinx/mlir-xten | ONNX-MLIR/TOSA streaming-dataflow extensions |
+| `onnx-mlir` | Xilinx/onnx-mlir | ONNX→MLIR compiler docs |
+| `rapidwright` | Xilinx/RapidWright | place-and-route framework (top md) |
+| `llvm-aie` | Xilinx/llvm-aie | AIE LLVM backend incl. PERF_OPT_GUIDE (top md) |
+| `mldebugger` | Xilinx/MLDebugger | NPU debug for ML designs |
+| `brevitas` | Xilinx/brevitas | quantization in PyTorch (top md) |
+| `xilinx-tcl-store` | Xilinx/XilinxTclStore | Vivado Tcl app store |
+| `embpf-bootfw-update-tool` | Xilinx/embpf-bootfw-update-tool | embedded boot FW update |
+| `xdp` | Xilinx/XDP | XRT debug/profile device platform |
+| `vmr` | Xilinx/VMR | Versal Management Runtime firmware |
+| `plnx-aie-examples` | Xilinx/plnx-aie-examples | AIE examples for Petalinux |
+| `finn-hlslib` | Xilinx/finn-hlslib | Vitis HLS library for FINN |
