@@ -99,29 +99,6 @@ Not in this repo — canonical copies live in the 1bit-MONSTER repo. Summary:
   (IRON bypasses AIR entirely). Key: `programming_guide.md`,
   `mlir_reference.md`, `AIRComputeModel.md`.
 
-## Xilinx doc mirrors (docs/)
-
-One folder per repo under `docs/`, copied from the local `~/amd-oss` clones by
-`sync-knowledge.sh` (selection mirrors the amd-oss MCP manifest):
-
-| Folder | Source repo | Notes |
-|---|---|---|
-| `vitis-libraries` | Xilinx/Vitis_Libraries | user-guide rst (docs.amd.com Vitis Libraries) |
-| `xrt` | Xilinx/XRT | runtime docs toc (xilinx.github.io/XRT) |
-| `mlir-aie` | Xilinx/mlir-aie | AIE dialect/pass docs + skills (xilinx.github.io/mlir-aie) |
-| `aie-rt` | Xilinx/aie-rt | AIE Run Time driver + FAL |
-| `mlir-xten` | Xilinx/mlir-xten | ONNX-MLIR/TOSA streaming-dataflow extensions |
-| `onnx-mlir` | Xilinx/onnx-mlir | ONNX→MLIR compiler docs |
-| `rapidwright` | Xilinx/RapidWright | place-and-route framework (top md) |
-| `llvm-aie` | Xilinx/llvm-aie | AIE LLVM backend incl. PERF_OPT_GUIDE (top md) |
-| `mldebugger` | Xilinx/MLDebugger | NPU debug for ML designs |
-| `brevitas` | Xilinx/brevitas | quantization in PyTorch (top md) |
-| `xilinx-tcl-store` | Xilinx/XilinxTclStore | Vivado Tcl app store |
-| `embpf-bootfw-update-tool` | Xilinx/embpf-bootfw-update-tool | embedded boot FW update |
-| `xdp` | Xilinx/XDP | XRT debug/profile device platform |
-| `vmr` | Xilinx/VMR | Versal Management Runtime firmware |
-| `plnx-aie-examples` | Xilinx/plnx-aie-examples | AIE examples for Petalinux |
-| `finn-hlslib` | Xilinx/finn-hlslib | Vitis HLS library for FINN |
 
 ## Xilinx doc mirrors (docs/)
 
@@ -146,3 +123,23 @@ One folder per repo under `docs/`, copied from the local `~/amd-oss` clones by
 | `vmr` | Xilinx/VMR | Versal Management Runtime firmware |
 | `plnx-aie-examples` | Xilinx/plnx-aie-examples | AIE examples for Petalinux |
 | `finn-hlslib` | Xilinx/finn-hlslib | Vitis HLS library for FINN |
+
+## AMD research repos (docs/)
+
+The remaining 12 repos of the 14-repo AMD research analysis set (ANALYSIS.md),
+each mirrored with a full recursive md/rst walk of the repo root:
+
+| Folder | Source repo | Notes |
+|---|---|---|
+| `finn` | Xilinx/finn | QONNX→FPGA dataflow compiler |
+| `qonnx` | fastmachinelearning/qonnx | Quantized ONNX IR + passes |
+| `iron` | Xilinx/iron | close-to-metal Python API for Ryzen AI NPUs |
+| `triton-xdna` | AMD/triton-xdna | Triton → XDNA NPU flow |
+| `logicnets` | Xilinx/logicnets | LUT-based NN synthesis |
+| `amd-pace` | AMD/PACE | EPYC CPU LLM inference engine |
+| `astra-sim` | astra-sim/astra-sim | distributed ML system simulator |
+| `chakra` | mlcommons/chakra | Execution-Trace standard |
+| `aup-ai-tutorials` | AMD/aup-ai-tutorials | university AI courseware |
+| `npueval` | Xilinx/npueval | AIE kernel-codegen eval |
+| `omnistat` | AMD/omnistat | cluster telemetry aggregation |
+| `omnitrace` | AMD/omnitrace | CPU/GPU profiler (deprecated) |

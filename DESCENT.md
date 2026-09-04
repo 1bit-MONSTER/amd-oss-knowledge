@@ -1231,3 +1231,35 @@ abandoned, the HRX-vs-XRT dispatch-overhead question stays open.
 Quality arc complete: 0.937 (per-column i4) -> 0.973 (G16) -> 0.989
 (ffn_i8) -> **0.993** (q/k/v i8) — 0.9965 is the measured all-i8 bound.
 Committed: `fba7943` (devel, 20 ahead of upstream, pushed).
+
+## Final performance picture (2026-09-01, part 41)
+
+Locked config (W4A8_OPS_MIX=ffn_i8 W4A8_ATTN_I8=q,k,v W4A8_GROUPS=4) full
+measurements, llama-3.2-1B, XDNA2:
+
+| workload | time | per-token |
+|---|---|---|
+| prefill, 6 tok | ~0.5-0.8 s | dispatch-bound fixed cost |
+| prefill, 182 tok | 771 ms | **4 ms/tok** (amortizes) |
+| decode (KV-cached) | — | **~530 ms/token** |
+| first-run (per process) | +3.5 s | JIT/context init |
+
+Quality: corr 0.992-0.993 vs bf16, top1 exact both prompts, fluent
+factually-correct decode.
+
+The W4A8 thread is complete: correct, at the quantization noise floor
+(0.993 vs 0.9965 all-i8 bound), decode ~530 ms/token bounded by the XRT
+per-dispatch overhead (kernel ~0.3 ms of each ~1.8 ms dispatch). All
+knobs measured and documented (W4A8_GROUPS / _MIX_LEN / _GROUP_ACTS /
+_OPS_MIX / _ATTN_I8 / _ZP); 20 commits ahead of upstream; DESCENT
+parts 28-41.
+
+Open threads for the next research direction:
+1. 1bit-engine NPU GEMM — the engine's npu-infer path has documented bugs
+   (group_id=0, missing insts; issues #2003/#2002); the i4 GEMM pattern
+   proven here could inform its fix.
+2. Multi-model W4A8 (qwen3 / zaya) — validates the ffn/attn finding
+   generalizes.
+3. Decode attention on the NPU (iron MHA op) — removes the last host math.
+4. HRX runtime for the dispatch overhead — needs the matching libhrx.
+5. KV-cache quantization (W8KV) for long context.

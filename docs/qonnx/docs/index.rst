@@ -1,0 +1,112 @@
+======
+QONNX
+======
+
+..
+   note:: **QONNX** is currently under active development. APIs will likely change.
+
+QONNX (Quantized ONNX) introduces four new custom operators -- `IntQuant`_, `BipolarQuant`_, `FloatQuant`_, and `Trunc`_
+-- in order to represent arbitrary-precision uniform quantization in ONNX. This enables:
+
+* Representation of binary, ternary, 3-bit, 4-bit, 6-bit or any other quantization, or quantized floating-point values.
+
+* Quantization is an operator itself, and can be applied to any parameter or layer input.
+
+* Flexible choices for scaling factor and zero-point granularity.
+
+* Quantized values are carried using standard `float` datatypes to remain ONNX protobuf-compatible.
+
+This repository contains a set of Python utilities to work with QONNX models, including but not limited to:
+
+* executing QONNX models for (slow) functional verification
+
+* shape inference, constant folding and other basic optimizations
+
+* summarizing the inference cost of a QONNX model in terms of mixed-precision MACs, parameter and activation volume
+
+* Python infrastructure for writing transformations and defining executable, shape-inferencable custom ops
+
+* (experimental) data layout conversion from standard ONNX NCHW to custom QONNX NHWC ops
+
+
+Quickstart
+-----------
+
+Operator definitions
++++++++++++++++++++++
+
+* `IntQuant`_ for 2-to-arbitrary-bit quantization, with scaling and zero-point
+
+* `BipolarQuant`_  for 1-bit (bipolar) quantization, with scaling and zero-point
+
+* `FloatQuant`_  for arbitrary-precision-float-quantized values
+
+* `Trunc`_ for truncating to a specified number of bits, with scaling and zero-point
+
+Installation
++++++++++++++
+
+Install latest release from PyPI:
+
+::
+
+   pip install qonnx
+
+
+Development
+++++++++++++
+
+Install in editable mode in a venv:
+
+::
+
+   git clone https://github.com/fastmachinelearning/qonnx
+   cd qonnx
+   virtualenv -p python3.10 venv
+   source venv/bin/activate
+   pip install -e .[testing, docs, notebooks]
+
+
+Test suite
+++++++++++
+
+Run entire test suite, parallelized across CPU cores:
+
+::
+
+   pytest -n auto --verbose
+
+
+
+Run a particular test and fall into pdb if it fails:
+
+::
+
+   pytest --pdb -k "test*extend*partition.py::test*extend*partition[extend_id1-2]"
+
+
+
+QONNX also uses GitHub actions to run the full test suite on PRs.
+
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+
+   ONNX-Based Compiler Infrastructure <overview>
+   Tutorials <tutorials>
+   qonnx-custom-ops/overview
+   API <api/modules>
+   License <license>
+   Contributors <authors>
+   Read Me <readme_link>
+   Release Notes <changelog>
+   Index <genindex>
+
+
+* :ref:`modindex`
+* :ref:`search`
+
+.. _IntQuant: qonnx-custom-ops/intquant_v1.html
+.. _BipolarQuant: qonnx-custom-ops/bipolarquant_v1.html
+.. _FloatQuant: qonnx-custom-ops/floatquant_v1.html
+.. _Trunc: qonnx-custom-ops/trunc_v2.html
